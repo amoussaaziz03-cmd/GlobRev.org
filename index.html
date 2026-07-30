@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Groupe GlobRev S.A — Fiabilité · Passion · Richesse</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0A1930;
+  --ink-soft:#122142;
+  --royal:#1D3E8F;
+  --royal-bright:#2E56C4;
+  --gold:#B8894B;
+  --gold-bright:#D9A85F;
+  --cream:#F5F2EA;
+  --paper:#FBFAF6;
+  --slate:#5B6270;
+  --line: rgba(10,25,48,0.12);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Work Sans', sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:'Fraunces', serif; font-weight:600; letter-spacing:-0.01em;}
+.eyebrow{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:0.72rem;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  color:var(--gold);
+}
+a{color:inherit;}
+img{display:block; max-width:100%;}
+.wrap{max-width:1180px; margin:0 auto; padding:0 32px;}
+
+/* ---------- NAV ---------- */
+nav{
+  position:sticky; top:0; z-index:50;
+  background:rgba(251,250,246,0.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+nav .wrap{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:18px 32px;
+}
+.brand{
+  font-family:'Fraunces', serif; font-weight:700; font-size:1.15rem;
+  display:flex; align-items:center; gap:10px;
+}
+.brand .mark{
+  width:28px; height:28px; border-radius:50%;
+  background:conic-gradient(from 90deg, var(--royal), var(--gold), var(--royal));
+  flex-shrink:0;
+}
+.navlinks{display:flex; gap:32px; font-size:0.9rem;}
+.navlinks a{text-decoration:none; color:var(--slate); transition:color .2s;}
+.navlinks a:hover{color:var(--royal);}
+@media (max-width:760px){ .navlinks{display:none;} }
+
+/* ---------- HERO ---------- */
+.hero{
+  background:linear-gradient(180deg, var(--ink) 0%, var(--ink-soft) 100%);
+  color:var(--paper);
+  overflow:hidden;
+  position:relative;
+}
+.hero .wrap{
+  display:grid; grid-template-columns:1.15fr 0.85fr; gap:56px;
+  padding-top:96px; padding-bottom:70px; align-items:center;
+}
+@media (max-width:860px){ .hero .wrap{grid-template-columns:1fr; padding-top:56px;} }
+
+.hero-text .eyebrow{color:var(--gold-bright);}
+.hero-text h1{
+  font-size:clamp(2.4rem, 5vw, 3.6rem);
+  line-height:1.05;
+  margin:18px 0 22px;
+}
+.hero-text h1 em{color:var(--gold-bright); font-style:normal;}
+.hero-text p{
+  color:rgba(245,242,234,0.78);
+  font-size:1.05rem;
+  max-width:46ch;
+  margin-bottom:30px;
+}
+.cta-row{display:flex; gap:14px; flex-wrap:wrap;}
+.btn{
+  font-family:'Work Sans', sans-serif; font-size:0.92rem; font-weight:500;
+  padding:13px 26px; border-radius:2px; text-decoration:none;
+  display:inline-block; transition:transform .2s, background .2s;
+  border:1px solid transparent;
+}
+.btn-gold{background:var(--gold); color:var(--ink);}
+.btn-gold:hover{background:var(--gold-bright); transform:translateY(-2px);}
+.btn-ghost{border-color:rgba(245,242,234,0.35); color:var(--paper);}
+.btn-ghost:hover{border-color:var(--paper); transform:translateY(-2px);}
+
+/* portrait + network signature */
+.hero-visual{position:relative; display:flex; justify-content:center;}
+.portrait-frame{
+  position:relative; width:100%; max-width:340px; aspect-ratio:4/5;
+  border:1px solid rgba(217,168,95,0.4);
+  padding:14px;
+}
+.portrait-frame img{width:100%; height:100%; object-fit:cover; object-position:top center;}
+.portrait-cap{
+  position:absolute; bottom:-2px; left:14px; right:14px;
+  background:var(--ink);
+  border-top:1px solid var(--gold);
+  padding:10px 14px;
+  font-family:'IBM Plex Mono', monospace;
+  font-size:0.7rem; letter-spacing:0.06em;
+  color:var(--paper);
+}
+.portrait-cap b{color:var(--gold-bright); display:block; font-size:0.78rem; margin-bottom:2px; font-weight:500;}
+
+/* orbit nodes under hero */
+.orbit{
+  margin-top:56px;
+  border-top:1px solid rgba(245,242,234,0.14);
+  padding-top:26px;
+}
+.orbit-row{
+  display:flex; justify-content:space-between; flex-wrap:wrap; gap:18px;
+}
+.orbit-node{
+  flex:1; min-width:150px;
+  font-family:'IBM Plex Mono', monospace; font-size:0.72rem;
+  color:rgba(245,242,234,0.55); letter-spacing:0.04em;
+  padding-left:16px; border-left:2px solid var(--royal-bright);
+}
+.orbit-node b{display:block; color:var(--paper); font-family:'Work Sans',sans-serif; font-size:0.92rem; font-weight:500; margin-bottom:3px;}
+
+/* ---------- SECTION GENERIC ---------- */
+section{padding:96px 0;}
+.section-head{max-width:640px; margin-bottom:56px;}
+.section-head h2{font-size:clamp(1.8rem,3.4vw,2.5rem); margin-top:10px;}
+.divider{height:1px; background:var(--line);}
+
+/* ---------- MISSION / IDEAL / PRINCIPES ---------- */
+.pillars{
+  display:grid; grid-template-columns:repeat(3,1fr); gap:1px;
+  background:var(--line); border:1px solid var(--line);
+}
+.pillar{background:var(--paper); padding:40px 34px;}
+.pillar h3{font-size:1.3rem; margin:14px 0 12px;}
+.pillar p{color:var(--slate); font-size:0.96rem;}
+@media (max-width:820px){ .pillars{grid-template-columns:1fr;} }
+
+.principles-strip{
+  background:var(--ink); color:var(--paper);
+  padding:46px 0;
+}
+.principles-strip .wrap{display:flex; justify-content:center; gap:0; flex-wrap:wrap;}
+.principle-item{
+  text-align:center; padding:0 44px; position:relative;
+}
+.principle-item:not(:last-child)::after{
+  content:''; position:absolute; right:0; top:8px; bottom:8px; width:1px;
+  background:rgba(245,242,234,0.18);
+}
+.principle-item b{
+  font-family:'Fraunces', serif; font-weight:600; font-size:1.35rem;
+  color:var(--gold-bright); display:block; margin-bottom:4px;
+}
+.principle-item span{font-size:0.8rem; color:rgba(245,242,234,0.6);}
+@media (max-width:700px){ .principle-item{padding:14px 26px;} .principle-item::after{display:none;} }
+
+/* ---------- FILIALES ---------- */
+.fil-block{border-top:1px solid var(--line); padding:80px 0;}
+.fil-head{
+  display:grid; grid-template-columns:220px 1fr; gap:40px; margin-bottom:44px;
+}
+.fil-head .tag{
+  font-family:'IBM Plex Mono', monospace; font-size:0.72rem; color:var(--royal);
+  letter-spacing:0.1em; text-transform:uppercase; align-self:start;
+  border-left:2px solid var(--royal); padding-left:12px; padding-top:2px;
+}
+.fil-head h2{font-size:clamp(1.7rem,3vw,2.3rem); margin-bottom:12px;}
+.fil-head p{color:var(--slate); max-width:60ch;}
+@media (max-width:760px){ .fil-head{grid-template-columns:1fr; gap:14px;} }
+
+/* Filiale 1: startups grid */
+.product-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
+.product-card{background:var(--paper); padding:30px 24px; display:flex; flex-direction:column; min-height:190px;}
+.product-card .pname{font-family:'Fraunces', serif; font-weight:600; font-size:1.1rem; margin-bottom:10px;}
+.product-card p{font-size:0.85rem; color:var(--slate); flex-grow:1;}
+.product-card .live{
+  font-family:'IBM Plex Mono', monospace; font-size:0.65rem; color:var(--gold);
+  letter-spacing:0.08em; margin-top:14px;
+}
+@media (max-width:900px){ .product-grid{grid-template-columns:repeat(2,1fr);} }
+@media (max-width:520px){ .product-grid{grid-template-columns:1fr;} }
+
+/* Filiale 2: AzizLabo */
+.labo-panel{
+  background:var(--ink); color:var(--paper);
+  padding:46px; display:grid; grid-template-columns:1fr 1fr; gap:40px;
+}
+.labo-panel ul{list-style:none;}
+.labo-panel li{
+  padding:14px 0; border-bottom:1px solid rgba(245,242,234,0.14);
+  font-size:0.95rem; display:flex; gap:14px; align-items:baseline;
+}
+.labo-panel li .lnum{font-family:'IBM Plex Mono',monospace; color:var(--gold-bright); font-size:0.78rem;}
+.labo-note{font-size:0.92rem; color:rgba(245,242,234,0.72); align-self:center;}
+@media (max-width:760px){ .labo-panel{grid-template-columns:1fr;} }
+
+/* Filiale 3: Consulting */
+.consult-panel{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line); border:1px solid var(--line);}
+.consult-card{background:var(--paper); padding:34px;}
+.consult-card .eyebrow{margin-bottom:10px;}
+.consult-card h4{font-family:'Fraunces',serif; font-size:1.15rem; font-weight:600; margin-bottom:10px;}
+.consult-card p{color:var(--slate); font-size:0.92rem;}
+.trendline{width:100%; height:70px; margin-top:16px;}
+@media (max-width:760px){ .consult-panel{grid-template-columns:1fr;} }
+
+/* Filiale 4: Fondation */
+.fondation-panel{
+  background:var(--cream); border:1px solid var(--line);
+  padding:44px;
+}
+.disease-tags{display:flex; flex-wrap:wrap; gap:10px; margin-top:22px;}
+.disease-tags span{
+  font-family:'IBM Plex Mono', monospace; font-size:0.72rem;
+  border:1px solid var(--royal); color:var(--royal);
+  padding:7px 14px; border-radius:20px;
+}
+.fond-quote{
+  font-family:'Fraunces', serif; font-style:italic; font-weight:500;
+  font-size:1.2rem; color:var(--ink); max-width:60ch; margin-top:26px;
+  border-left:3px solid var(--gold); padding-left:18px;
+}
+
+/* ---------- FOOTER ---------- */
+footer{background:var(--ink); color:rgba(245,242,234,0.75); padding:64px 0 30px;}
+.footer-grid{display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:44px; margin-bottom:48px;}
+.footer-grid h4{font-family:'Fraunces',serif; color:var(--paper); font-size:1.15rem; margin-bottom:14px;}
+.footer-grid p, .footer-grid a{font-size:0.9rem; color:rgba(245,242,234,0.68); text-decoration:none; display:block; margin-bottom:8px;}
+.footer-grid a:hover{color:var(--gold-bright);}
+.footer-bottom{
+  border-top:1px solid rgba(245,242,234,0.14); padding-top:24px;
+  display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+  font-size:0.78rem; color:rgba(245,242,234,0.45);
+}
+@media (max-width:760px){ .footer-grid{grid-template-columns:1fr;} }
+
+/* reduced motion */
+@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} }
+
+::selection{background:var(--gold); color:var(--ink);}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand"><span class="mark"></span>Groupe GlobRev S.A</div>
+    <div class="navlinks">
+      <a href="#mission">Mission</a>
+      <a href="#startups">Start-ups</a>
+      <a href="#azizlabo">AzizLabo</a>
+      <a href="#consulting">Consulting &amp; Impact</a>
+      <a href="#fondation">Fondation HOUESSOU</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-text">
+      <div class="eyebrow">Groupe GlobRev S.A — Cotonou, Bénin</div>
+      <h1>Construire un monde plus <em>sûr</em> et <em>durable</em>, par des actes responsables.</h1>
+      <p>Quatre filiales, une même exigence : mettre la fiabilité, la passion et la richesse collective au service de la santé, du savoir et de la solidarité en Afrique et au-delà.</p>
+      <div class="cta-row">
+        <a href="#startups" class="btn btn-gold">Découvrir nos filiales</a>
+        <a href="#contact" class="btn btn-ghost">Nous contacter</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="portrait-frame">
+        <img src="ceo.png" alt="HOUESSOU Amoussa Aziz, CEO du Groupe GlobRev S.A">
+        <div class="portrait-cap"><b>HOUESSOU Amoussa Aziz</b>Chief Executive Officer, Groupe GlobRev S.A</div>
+      </div>
+    </div>
+  </div>
+  <div class="wrap orbit">
+    <div class="orbit-row">
+      <div class="orbit-node"><b>Start-ups</b>Plateformes nouvelle génération</div>
+      <div class="orbit-node"><b>AzizLabo</b>Analyses biomédicales</div>
+      <div class="orbit-node"><b>Consulting &amp; Impact</b>Prédiction de marché santé</div>
+      <div class="orbit-node"><b>Fondation HOUESSOU</b>Action caritative</div>
+    </div>
+  </div>
+</header>
+
+<section id="mission">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Ce qui nous anime</div>
+      <h2>Mission, idéal et principes</h2>
+    </div>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="eyebrow">Mission</div>
+        <h3>Un acte responsable, à chaque échelle</h3>
+        <p>Construire un monde plus sûr et durable à travers des actes responsables. Notre existence est la solution unanime demandée par la connaissance collective contemporaine.</p>
+      </div>
+      <div class="pillar">
+        <div class="eyebrow">Idéal</div>
+        <h3>Un réseau, un cap commun</h3>
+        <p>Rester au cœur de notre réseau pour atteindre l'idéal dans la sérénité et la continuité de vos profonds désirs.</p>
+      </div>
+      <div class="pillar">
+        <div class="eyebrow">Principes</div>
+        <h3>Ce qui ne se négocie pas</h3>
+        <p>Trois exigences qui structurent chacune de nos filiales, du laboratoire au terrain associatif.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="principles-strip">
+  <div class="wrap">
+    <div class="principle-item"><b>Fiabilité</b><span>Rigueur des protocoles et des données</span></div>
+    <div class="principle-item"><b>Passion</b><span>Engagement sur le terrain de la santé publique</span></div>
+    <div class="principle-item"><b>Richesse</b><span>Valeur créée et partagée durablement</span></div>
+  </div>
+</div>
+
+<!-- FILIALE 1 : START-UPS -->
+<div class="fil-block" id="startups">
+  <div class="wrap">
+    <div class="fil-head">
+      <div class="tag">Filiale 01</div>
+      <div>
+        <h2>Start-ups &amp; plateformes nouvelle génération</h2>
+        <p>Quatre produits déjà commercialisés, conçus pour rapprocher les populations du soin, du savoir et des opportunités professionnelles.</p>
+      </div>
+    </div>
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="pname">HEBDO SANTÉ</div>
+        <p>Plateforme web de santé et de nutrition qui diffuse chaque semaine des repères fiables pour les particuliers et les professionnels.</p>
+        <div class="live">● En exploitation</div>
+      </div>
+      <div class="product-card">
+        <div class="pname">BuildCareer</div>
+        <p>Career OS piloté par l'intelligence artificielle : accompagnement de carrière sur le long terme, veille et sélection d'opportunités.</p>
+        <div class="live">● En exploitation</div>
+      </div>
+      <div class="product-card">
+        <div class="pname">PortailProfessionnel</div>
+        <p>Portail qui met en relation talents, entreprises et institutions autour de parcours professionnels structurés.</p>
+        <div class="live">● En exploitation</div>
+      </div>
+      <div class="product-card">
+        <div class="pname">DysProSanPre</div>
+        <p>Outil dédié à la prévention et au dépistage précoce des troubles de santé prioritaires.</p>
+        <div class="live">● En exploitation</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FILIALE 2 : AZIZLABO -->
+<div class="fil-block" id="azizlabo">
+  <div class="wrap">
+    <div class="fil-head">
+      <div class="tag">Filiale 02</div>
+      <div>
+        <h2>AzizLabo</h2>
+        <p>Services et protocoles d'analyses biomédicales, au service des cliniciens, des chercheurs et des patients.</p>
+      </div>
+    </div>
+    <div class="labo-panel">
+      <ul>
+        <li><span class="lnum">A</span> Réalisation d'analyses biomédicales selon des protocoles standardisés</li>
+        <li><span class="lnum">B</span> Conception de protocoles d'analyse adaptés aux besoins cliniques et de recherche</li>
+        <li><span class="lnum">C</span> Contrôle qualité et fiabilité des résultats délivrés</li>
+        <li><span class="lnum">D</span> Appui technique aux structures de santé partenaires</li>
+      </ul>
+      <p class="labo-note">Chaque protocole d'AzizLabo répond au premier principe du Groupe : la fiabilité — condition de toute décision de santé publique.</p>
+    </div>
+  </div>
+</div>
+
+<!-- FILIALE 3 : CONSULTING & IMPACT -->
+<div class="fil-block" id="consulting">
+  <div class="wrap">
+    <div class="fil-head">
+      <div class="tag">Filiale 03</div>
+      <div>
+        <h2>Consulting &amp; Impact</h2>
+        <p>Anticiper pour mieux décider : nos analyses éclairent le marché financier et le marché sanitaire de la santé publique.</p>
+      </div>
+    </div>
+    <div class="consult-panel">
+      <div class="consult-card">
+        <div class="eyebrow">Marché financier</div>
+        <h4>Prédiction &amp; conseil</h4>
+        <p>Modélisation et anticipation des dynamiques de marché pour orienter les décisions d'investissement et de gestion.</p>
+        <svg class="trendline" viewBox="0 0 300 70" preserveAspectRatio="none">
+          <polyline points="0,55 40,48 80,50 120,32 160,36 200,18 240,22 300,6" fill="none" stroke="#1D3E8F" stroke-width="2"/>
+        </svg>
+      </div>
+      <div class="consult-card">
+        <div class="eyebrow">Marché sanitaire</div>
+        <h4>Veille &amp; impact santé publique</h4>
+        <p>Lecture des tendances de santé publique pour anticiper les besoins et orienter les politiques et programmes de prévention.</p>
+        <svg class="trendline" viewBox="0 0 300 70" preserveAspectRatio="none">
+          <polyline points="0,40 40,45 80,30 120,34 160,20 200,26 240,12 300,16" fill="none" stroke="#B8894B" stroke-width="2"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FILIALE 4 : FONDATION -->
+<div class="fil-block" id="fondation">
+  <div class="wrap">
+    <div class="fil-head">
+      <div class="tag">Filiale 04</div>
+      <div>
+        <h2>Fondation &amp; Caritative HOUESSOU</h2>
+        <p>Une œuvre caritative au service des orphelins et des personnes démunies, et un engagement de sensibilisation des jeunes face aux maladies évitables.</p>
+      </div>
+    </div>
+    <div class="fondation-panel">
+      <div class="eyebrow">Champs d'action</div>
+      <p style="margin-top:8px; color:var(--slate); max-width:60ch;">Financement de campagnes et de sensibilisation autour des maladies chroniques liées à nos habitudes de vie, ainsi que des grandes maladies transmissibles.</p>
+      <div class="disease-tags">
+        <span>Obésité</span>
+        <span>Diabète</span>
+        <span>Maladies cardiovasculaires</span>
+        <span>Drépanocytose</span>
+        <span>Hépatite virale B</span>
+        <span>VIH-Sida</span>
+        <span>Paludisme</span>
+      </div>
+      <p class="fond-quote">Rester au cœur de notre réseau, c'est aussi tendre la main à celles et ceux qui en ont le plus besoin.</p>
+    </div>
+  </div>
+</div>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>Groupe GlobRev S.A</h4>
+        <p>Professionnel, impactant. Fiabilité — Passion — Richesse.</p>
+        <p>Immeuble 147, Akpakpa — Cotonou, République du Bénin</p>
+      </div>
+      <div>
+        <h4>Direction</h4>
+        <p>HOUESSOU Amoussa Aziz</p>
+        <p>Chief Executive Officer</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="tel:+2290167826835">+229 01 67 82 68 35</a>
+        <a href="mailto:amoussaaziz03@gmail.com">amoussaaziz03@gmail.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Groupe GlobRev S.A — Tous droits réservés</span>
+      <span>Start-ups · AzizLabo · Consulting &amp; Impact · Fondation HOUESSOU</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
